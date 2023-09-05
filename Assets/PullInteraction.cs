@@ -12,7 +12,7 @@ public class PullInteraction : XRBaseInteractable
     public float pullAmount { get; private set; } = 0.0f;
 
     private LineRenderer _lineRenderer;
-    private IXRSelectInteractor pullingInteractor = null;
+    private IXRSelectInteractor _pullingInteractor = null;
 
     protected override void Awake()
     {
@@ -22,13 +22,13 @@ public class PullInteraction : XRBaseInteractable
 
     public void SetPullInteraction(SelectEnterEventArgs args)
     {
-        pullingInteractor = args.interactorObject;
+        _pullingInteractor = args.interactorObject;
     }
 
     public void Release()
     {
         PullActionReleased?.Invoke(pullAmount);
-        pullingInteractor = null;
+        _pullingInteractor = null;
         pullAmount = 0.0f;
         notch.transform.localPosition = new Vector3(notch.transform.localPosition.x, notch.transform.localPosition.y, 0f);
         UpdateString();
@@ -41,8 +41,12 @@ public class PullInteraction : XRBaseInteractable
         {
             if (isSelected)
             {
-                Vector3 pullPosition = pullingInteractor.transform.position;
+                Vector3 pullPosition = _pullingInteractor.transform.position;
                 pullAmount = CalculatePull(pullPosition);
+
+                UpdateString();
+
+                HapticFeedback();
             }
         }
     }
@@ -63,5 +67,14 @@ public class PullInteraction : XRBaseInteractable
         Vector3 linePosition = Vector3.forward * Mathf.Lerp(start.transform.localPosition.z, end.transform.localPosition.z, pullAmount);
         notch.transform.localPosition = new Vector3(notch.transform.localPosition.x, notch.transform.localPosition.y, linePosition.z + .2f);
         _lineRenderer.SetPosition(1, linePosition);
+    }
+
+    private void HapticFeedback()
+    {
+        if (_pullingInteractor != null)
+        {
+            ActionBasedController currentController = _pullingInteractor.transform.gameObject.GetComponent<ActionBasedController>();
+            currentController.SendHapticImpulse(pullAmount, .1f);
+        }
     }
 }
