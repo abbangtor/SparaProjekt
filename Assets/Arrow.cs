@@ -19,8 +19,8 @@ public class Arrow : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody>();
 
-        _particleSystem = GetComponent<ParticleSystem>();
-        _trailRenderer = GetComponent<TrailRenderer>();
+        _particleSystem = GetComponentInChildren<ParticleSystem>();
+        _trailRenderer = GetComponentInChildren<TrailRenderer>();
 
         PullInteraction.PullActionReleased += Release;
         Stop();
