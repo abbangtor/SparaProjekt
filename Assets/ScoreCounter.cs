@@ -17,6 +17,8 @@ public class ScoreCounter : MonoBehaviour
         if (collision.gameObject.CompareTag(_tag))
         {
             //collectionSoundEffect.Play();
+            collision.GetComponentInParent<SkräpUppplockning>().stuckTrash = false;
+            Destroy(collision.transform.parent.gameObject);
             Destroy(collision.gameObject);
             points++;
             _score.text = "Poäng: " + points;

@@ -5,8 +5,9 @@ using UnityEngine;
 public class SkräpUppplockning : MonoBehaviour
 {
     [SerializeField] private Transform _tipTransform;
-    private GameObject _trash;
+    public GameObject _trash;
     public bool stuckTrash = false;
+    [SerializeField] private Transform arrow;
 
     List<string> trashList = new List<string>()
     {
@@ -20,6 +21,7 @@ public class SkräpUppplockning : MonoBehaviour
     void Start()
     {
         _tipTransform = _tipTransform.GetComponent<Transform>();
+        arrow = arrow.GetComponent<Transform>();
     }
 
   
@@ -35,6 +37,8 @@ public class SkräpUppplockning : MonoBehaviour
                     /*foodTransform = other.GetComponent<Transform>();*/
                     stuckTrash = true;
                     _trash.GetComponent<Collider>().isTrigger = false;
+                    _trash.transform.SetParent(arrow);
+
                 }
             }
         }
@@ -45,9 +49,10 @@ public class SkräpUppplockning : MonoBehaviour
     {
         if (stuckTrash)
         {
-            _trash.transform.position = _tipTransform.position;
-            _trash.transform.rotation = transform.rotation;
+            _trash.transform.SetPositionAndRotation(_tipTransform.position, transform.rotation);
+            _trash.GetComponent<Rigidbody>().isKinematic = true;
 
         }
+
     }
 }

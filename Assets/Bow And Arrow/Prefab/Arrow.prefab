@@ -5002,7 +5002,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tipTransform: {fileID: 1769337598482281036}
+  _trash: {fileID: 0}
   stuckTrash: 0
+  arrow: {fileID: 1769337597633466026}
 --- !u!65 &5351003919320278572
 BoxCollider:
   m_ObjectHideFlags: 0
