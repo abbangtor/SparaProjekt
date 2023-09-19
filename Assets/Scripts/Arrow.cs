@@ -5,7 +5,7 @@ using UnityEngine.Assertions.Must;
 
 public class Arrow : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed = 15f;
     public Transform tip;
 
     private Rigidbody _rigidBody;
@@ -14,6 +14,7 @@ public class Arrow : MonoBehaviour
 
     private ParticleSystem _particleSystem;
     private TrailRenderer _trailRenderer;
+    private BoxCollider _boxCollider;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class Arrow : MonoBehaviour
 
         _particleSystem = GetComponentInChildren<ParticleSystem>();
         _trailRenderer = GetComponentInChildren<TrailRenderer>();
+        _boxCollider = GetComponentInChildren<BoxCollider>();
 
         PullInteraction.PullActionReleased += Release;
         Stop();
@@ -36,6 +38,7 @@ public class Arrow : MonoBehaviour
         PullInteraction.PullActionReleased -= Release;
         gameObject.transform.parent = null;
         _inAir = true;
+        _boxCollider.enabled = false;
         SetPhysics(true);
 
         Vector3 force = transform.forward * value * speed;
@@ -75,13 +78,16 @@ public class Arrow : MonoBehaviour
         {
             if (hitInfo.transform.gameObject.layer != 8)
             {
-                if (hitInfo.transform.TryGetComponent(out Rigidbody body))
+                if (hitInfo.transform.gameObject.layer != 9) 
                 {
-                    _rigidBody.interpolation = RigidbodyInterpolation.None;
-                    transform.parent = hitInfo.transform;
-                    body.AddForce(_rigidBody.velocity, ForceMode.Impulse);
-                }
+                    if (hitInfo.transform.TryGetComponent(out Rigidbody body))
+                    {
+                        _rigidBody.interpolation = RigidbodyInterpolation.None;
+                        transform.parent = hitInfo.transform;
+                        body.AddForce(_rigidBody.velocity, ForceMode.Impulse);
+                    }
                 Stop();
+                }
             }
         }
     }

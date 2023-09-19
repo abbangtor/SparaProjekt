@@ -24,21 +24,23 @@ public class ScoreCounter : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        
-
         for (int i = 0; i < trashList.Count; i++)
         {
             if (collision.gameObject.CompareTag(trashList[i]))
             {
                 Debug.Log(collision.tag);
 
-                collision.GetComponentInParent<SkräpUppplockning>().stuckTrash = false;
+                collision.GetComponentInParent<SkräpUpplockning>().stuckTrash = false;
                 Destroy(collision.transform.parent.gameObject);
                 Destroy(collision.gameObject);
 
                 if (collision.gameObject.CompareTag(_tag))
                 {
                     points++;
+                    if (_tag == "Pant")
+                    {
+                        points++;
+                    }
                 }
                 else
                 {

@@ -29,6 +29,7 @@ public class ArrowSpawner : MonoBehaviour
     {
         if (_bow.isSelected && !_arrowNotched)
         {
+            _arrowNotched = true;
             StartCoroutine("DelayedSpawn");
         }
         if (!_bow.isSelected)
@@ -41,10 +42,10 @@ public class ArrowSpawner : MonoBehaviour
     private void NotchEmpty(float value)
     {
         _arrowNotched = false;
+        _currentArrow = null;
     }
     IEnumerator DelayedSpawn()
     {
-        _arrowNotched = true;
         yield return new WaitForSeconds(1f);
         _currentArrow = Instantiate(arrow, notch.transform);
     }

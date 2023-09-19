@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkräpUppplockning : MonoBehaviour
+public class SkräpUpplockning : MonoBehaviour
 {
     [SerializeField] private Transform _tipTransform;
     public GameObject _trash;
@@ -17,6 +17,7 @@ public class SkräpUppplockning : MonoBehaviour
         "Compost",
         "Pant"
     };
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +35,8 @@ public class SkräpUppplockning : MonoBehaviour
                 if (other.gameObject.CompareTag(trashList[i]))
                 {
                     _trash = other.gameObject;
-                    /*foodTransform = other.GetComponent<Transform>();*/
                     stuckTrash = true;
-                    _trash.GetComponent<Collider>().isTrigger = false;
+                    /*_trash.GetComponent<Collider>().enabled = false;*/
                     _trash.transform.SetParent(arrow);
 
                 }
@@ -51,6 +51,7 @@ public class SkräpUppplockning : MonoBehaviour
         {
             _trash.transform.SetPositionAndRotation(_tipTransform.position, transform.rotation);
             _trash.GetComponent<Rigidbody>().isKinematic = true;
+
 
         }
 
