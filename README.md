@@ -39,17 +39,30 @@ Explain how to use your Unity project. Include any necessary information about c
 
 ## Licens
 
-Specify the license under which your Unity project is distributed. For example:
-
-This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT licens - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Lista över kända buggar
 
-- Bla bla
+- Vissa "faces" syns inte från vissa vinklar i Unity, efter att ha importerat en blender fil:
+  - Problemet kan vara "backface culling".
+  - För att kolla/fixa detta:
+    -  inne i blender tryck ned shading fliken
+    -  tryck i BackFace Culling (så här ser modellen ut i unity).
+    -  Om visa faces saknas: Lägg till en solidify modifier till de delar som saknar faces (eventuellt hela modellen).
+  - Kan ibland fixas genom att gå in i "edit-mode" i blender och klicka Ctrl shift N. Ta sedan bort så inside inte är ifyllt under "recalculate normals", spara.
 
 ## Credits
 
-Jag!
+#### Utväcklare:
+
+- Cecilia Ek
+- Emilia Romberg
+- Elvira Tapper
+- Helen Yohanes
+- Ängla Törnros
+
+#### Resurser:
+- Fist full of shrimp
 
 ## Changelogs
 
