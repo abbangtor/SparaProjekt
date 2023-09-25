@@ -1,6 +1,6 @@
 # vr-edutainment-with-bow-and-arrow-basgrupp-1
 
-*Skräp i stora lass* är ett pil och båge spel där man källsorterar olika typer av skräp: plast, metall, papper, kompost och pant. Med hjälp av bågen så spetsar du skräpet med pilen och skjuter den i rätt soptunna. 
+*Skräp i stora lass* är ett pil och båge spel i VR där man källsorterar olika typer av skräp: plast, metall, papper, kompost och pant. Med hjälp av bågen så spetsar du skräpet med pilen och skjuter den i rätt soptunna. Pant ger dubbla poäng och skuter du skräpet i fel soptunna får du minuspoäng.
 
 ## Innehållförteckning
 
@@ -23,7 +23,15 @@ Innan du börjar måste du se till att du har rätt program och att du har insta
 
 ### Installation
 
-1. 
+1. Skapa en ny mapp för ditt projekt
+2. Öppna en terminal eller kommandotolk och navigera till den mapp där du vill spara det klonade projektet.
+3. Använd `git clone` för att klona projektet:
+
+~~~
+git clone https://github.com/abbindustrigymnasium/vr-edutainment-with-bow-and-arrow-basgrupp-1.git
+~~~
+
+4. Öppna projektet i Unity
 
 ## Användning
 
