@@ -1,41 +1,41 @@
 # vr-edutainment-with-bow-and-arrow-basgrupp-1
 
-Brief description of your Unity project. This section should provide a concise overview of what your project is all about.
+*Skräp i stora lass* är ett pil och båge spel där man källsorterar olika typer av skräp: plast, metall, papper, kompost och pant. Med hjälp av bågen så spetsar du skräpet med pilen och skjuter den i rätt soptunna. 
 
-## Table of Contents
+## Innehållförteckning
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
+- [Kom Igång](#kom-igång)
+  - [Systemkrav](#systemkrav)
   - [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [List of known bugs](#list-of-known-bugs)
+- [Användning](#användning)
+- [Licens](#licens)
+- [Lista över kända buggar](#lista-över-kända-buggar)
 - [Credits](#credits)
 - [Changelogs](#changelogs)
 
-## Getting started
+## Kom Igång
 
-blablabla
+Innan du börjar måste du se till att du har rätt program och att du har installerat spelet.
 
-### Prerequisites
+### Systemkrav
 
-List any software, libraries, or tools that users need to have installed before they can use your project.
+- Unity 2021.3.14
 
 ### Installation
 
-Provide step-by-step instructions for installing and setting up your Unity project.
+1. 
 
-## Usage
+## Användning
 
 Explain how to use your Unity project. Include any necessary information about controls, settings, or other important aspects of the user experience.
 
-## License
+## Licens
 
 Specify the license under which your Unity project is distributed. For example:
 
 This project is licensed under the [License Name] - see the [LICENSE.md](LICENSE.md) file for details.
 
-## List of known bugs
+## Lista över kända buggar
 
 - Bla bla
 
