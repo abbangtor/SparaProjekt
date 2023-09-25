@@ -7,8 +7,7 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    private int points = 0;
-    [SerializeField] private Text _score;
+    public PointSign pointSign;
     [SerializeField] private string _tag;
 
     List<string> trashList = new List<string>()
@@ -21,6 +20,11 @@ public class ScoreCounter : MonoBehaviour
     };
 
     //[SerializeField] private AudioSource collectionSoundEffect;
+
+    private void Start()
+    {
+        pointSign = GameObject.Find("sign").GetComponent<PointSign>();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -36,18 +40,16 @@ public class ScoreCounter : MonoBehaviour
 
                 if (collision.gameObject.CompareTag(_tag))
                 {
-                    points++;
+                    pointSign.points++;
                     if (_tag == "Pant")
                     {
-                        points++;
+                        pointSign.points++;
                     }
                 }
                 else
                 {
-                    points--;
+                    pointSign.points--;
                 }
-
-                _score.text = "Poäng: " + points;
 
             }
         }
