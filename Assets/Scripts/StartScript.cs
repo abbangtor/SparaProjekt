@@ -8,7 +8,7 @@ public class StartScript : MonoBehaviour
     public bool timerIsRunning = false;
     public Text timeText;
     public BoxCollider BowCollider;
-    public void OnStart()
+    /*public void OnStart()
     {
         // Starts the timer automatically
         timerIsRunning = true;
@@ -38,5 +38,5 @@ public class StartScript : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
+    }*/
 }
