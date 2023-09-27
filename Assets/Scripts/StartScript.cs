@@ -13,16 +13,18 @@ public class StartScript : MonoBehaviour
         // Starts the timer automatically
         timerIsRunning = true;
         BowCollider.enabled = true;
-        Game(timerIsRunning);
+        Game();
+      
     }
-    private void Game(bool TimerRunning, int time)
+    private void Game()
     {
-        if (TimerRunning)
+        if (timerIsRunning)
         {
-            if (time > 0)
+            if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
+                Game();
             }
             else
             {
