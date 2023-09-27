@@ -35,7 +35,11 @@ git clone https://github.com/abbindustrigymnasium/vr-edutainment-with-bow-and-ar
 
 ## Användning
 
+### Köra projektet
+
 Explain how to use your Unity project. Include any necessary information about controls, settings, or other important aspects of the user experience.
+
+### Spela spelet
 
 ## Licens
 
@@ -56,8 +60,8 @@ This project is licensed under the MIT licens - see the [LICENSE.md](LICENSE.md)
 #### Utväcklare:
 
 - Cecilia Ek
-- Emilia Romberg
 - Elvira Tapper
+- Emilia Romberg
 - Helen Yohanes
 - Ängla Törnros
 
