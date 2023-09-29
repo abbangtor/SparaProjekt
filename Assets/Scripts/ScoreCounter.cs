@@ -19,11 +19,16 @@ public class ScoreCounter : MonoBehaviour
         "Pant"
     };
 
+    public AudioClip correctSound;
+    public AudioClip wrongSound;
+    public AudioSource audioSource;
+
     //[SerializeField] private AudioSource collectionSoundEffect;
 
     private void Start()
     {
         pointSign = GameObject.Find("sign").GetComponent<PointSign>();
+        audioSource= GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -41,6 +46,7 @@ public class ScoreCounter : MonoBehaviour
                 if (collision.gameObject.CompareTag(_tag))
                 {
                     pointSign.points++;
+                    PlayCorrectSound();
                     if (_tag == "Pant")
                     {
                         pointSign.points++;
@@ -49,9 +55,20 @@ public class ScoreCounter : MonoBehaviour
                 else
                 {
                     pointSign.points--;
+                    PlayWrongSound();
                 }
 
             }
         }
+    }
+
+    private void PlayCorrectSound()
+    {
+        audioSource.PlayOneShot(correctSound, 0.7f);
+    }
+
+    private void PlayWrongSound()
+    {
+        audioSource.PlayOneShot(wrongSound, 0.7f);
     }
 }
