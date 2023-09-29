@@ -3,7 +3,11 @@ guid: cacb67851e158304d8aa809e482198ce
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pointSign: {instanceID: 0}
+  - correctSound: {fileID: 8300000, guid: e7e8221b8f4ef864ca1990aa00d2a076, type: 3}
+  - wrongSound: {fileID: 8300000, guid: 5aa7375f7a53bd64eaa8dc3969e6df30, type: 3}
+  - audio: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

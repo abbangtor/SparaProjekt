@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,16 +13,18 @@ public class StartScript : MonoBehaviour
         // Starts the timer automatically
         timerIsRunning = true;
         BowCollider.enabled = true;
-        Game(timerIsRunning);
+        Game();
+      
     }
-    private void Game(bool TimerRunning, int time)
+    private void Game()
     {
-        if (TimerRunning)
+        if (timerIsRunning)
         {
-            if (time > 0)
+            if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
                 DisplayTime(timeRemaining);
+                Game();
             }
             else
             {
@@ -38,5 +40,6 @@ public class StartScript : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }*/
-}
+
+    }
+}*/

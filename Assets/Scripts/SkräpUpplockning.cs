@@ -18,11 +18,14 @@ public class SkräpUpplockning : MonoBehaviour
         "Pant"
     };
 
+    private AudioSource _audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         _tipTransform = _tipTransform.GetComponent<Transform>();
         arrow = arrow.GetComponent<Transform>();
+        _audioSource= GetComponent<AudioSource>();
     }
 
   
@@ -36,12 +39,19 @@ public class SkräpUpplockning : MonoBehaviour
                 {
                     _trash = other.gameObject;
                     stuckTrash = true;
+                    PlayPokeSound();
                     /*_trash.GetComponent<Collider>().enabled = false;*/
                     _trash.transform.SetParent(arrow);
 
                 }
             }
         }
+    }
+
+    private void PlayPokeSound()
+    {
+        _audioSource.Stop();
+        _audioSource.Play();
     }
 
     // Update is called once per frame
