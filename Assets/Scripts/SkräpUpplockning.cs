@@ -25,10 +25,10 @@ public class SkräpUpplockning : MonoBehaviour
     {
         _tipTransform = _tipTransform.GetComponent<Transform>();
         arrow = arrow.GetComponent<Transform>();
-        _audioSource= GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
-  
+
     private void OnCollisionEnter(Collision other)
     {
         if (!stuckTrash)
