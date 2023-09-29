@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public PointSign pointSign;
+    private PointSign pointSign;
     [SerializeField] private string _tag;
 
     List<string> trashList = new List<string>()

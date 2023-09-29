@@ -9,8 +9,12 @@ public class InstantiateRandom : MonoBehaviour
 
     public GameObject[] objectsToInstantiate;
 
+    [SerializeField] private float _interval = 3f;
+
+    private float _time;
+
     // Start is called before the first frame update
-    void Start()
+    void Spawn()
     {
         int n = Random.Range(0,objectsToInstantiate.Length);
        // Instantiate(objectsToInstantiate[n], Spawnposition.position, objectsToInstantiate[n].transform.rotation);
@@ -21,10 +25,11 @@ public class InstantiateRandom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Check for input using the new Input System.
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        _time += Time.deltaTime;
+        while (_time >= _interval)
         {
-            // Your code for handling spacebar input.
+            Spawn();
+            _time -= _interval;
         }
     }
 }
