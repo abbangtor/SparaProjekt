@@ -2,6 +2,8 @@
 
 *Skräp i stora lass* är ett pil och båge spel i VR där man källsorterar olika typer av skräp: plast, metall, papper, kompost och pant. Med hjälp av bågen så spetsar du skräpet med pilen och skjuter den i rätt soptunna. Pant ger dubbla poäng och skuter du skräpet i fel soptunna får du minuspoäng. 
 
+Spelet är riktat mot lågstadieelever. Målet med spelet är att lära sig om vikten av källsortering och återvinning på ett roligt och interaktivt sätt.
+
 ## Innehållförteckning
 
 - [Kom Igång](#kom-igång)
@@ -9,7 +11,7 @@
   - [Installation](#installation)
 - [Användning](#användning)
 - [Licens](#licens)
-- [Lista över kända buggar](#lista-över-kända-buggar)
+- [Lista över kända fel](#lista-över-kända-buggar)
 - [Credits](#credits)
 - [Changelogs](#changelogs)
 
@@ -56,7 +58,7 @@ Vi har använt ett Oculus quest 2 när vi har kört spelet under utvecklingen av
 
 Projektet är licensierat under MIT-licens. 
 
-## Lista över kända buggar
+## Lista över kända fel
 
 - Vissa "faces" syns inte från vissa vinklar i Unity, efter att ha importerat en blender fil:
   - Problemet kan vara "backface culling".
@@ -65,7 +67,9 @@ Projektet är licensierat under MIT-licens.
     -  tryck i BackFace Culling (så här ser modellen ut i unity).
     -  Om visa faces saknas: Lägg till en solidify modifier till de delar som saknar faces (eventuellt hela modellen).
   - Kan ibland fixas genom att gå in i "edit-mode" i blender och klicka Ctrl shift N. Ta sedan bort så inside inte är ifyllt under "recalculate normals", spara.
-
+  
+- När man bygger projektet för första gången kan Unity klaga på att "Color space" är fel eller inte fungerar som det ska
+  - För att lösa detta problem behöver en inställning i player settings ändras. Gå först in i player settings, color space, byt till det andra alternativet (Linear/Gamma). Vi använder Linear, men ibland kan man behöva byta till Gamma och sedan tillbaka till linear.
 
 ## Credits
 
@@ -78,7 +82,7 @@ Projektet är licensierat under MIT-licens.
 - Ängla Törnros
 
 #### Resurser:
-- Fist full of shrimp
+- Fist full of shrimp VR Tutorial för pilbåge
 
 ## Changelogs
 
