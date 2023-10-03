@@ -5,7 +5,7 @@ using UnityEngine.Assertions.Must;
 
 public class Arrow : MonoBehaviour
 {
-    public float speed = 15f;
+    public float speed = 20f;
     public Transform tip;
 
     private Rigidbody _rigidBody;
