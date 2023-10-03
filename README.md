@@ -91,5 +91,3 @@ Projektet är licensierat under MIT-licens.
 #### Resurser:
 - Fist full of shrimp VR Tutorial för pilbåge
 
-## Changelogs
-
