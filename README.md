@@ -44,10 +44,13 @@ Vi har använt ett Oculus quest 2 när vi har kört spelet under utvecklingen av
 
 ### Spela spelet
 
-1. Plocka upp pilbågen. En pil kommer att autogenereras på pilbågen.
-2. Spetsa en bit skräp med pilen så att den fastnar.
-3. Skjut pilen i rätt soptunna.
-4. Sortera så mycket skräp som möjligt innan tiden tar slut.
+1. Klicka "Spela" i menyn. Då försvinner menyn och timern startar.
+2. Plocka upp pilbågen. En pil kommer att autogenereras på pilbågen när strängen dras i.
+3. Spetsa en bit skräp med pilen så att den fastnar.
+4. Sikta och skjut skräpet i rätt soptunna. Att skjuta i rätt soptunna ger ett poäng, pant ger två. Men att skjuta i fel soptunna ger minuspoäng.
+5. Sortera så mycket skräp som möjligt innan tiden tar slut.
+6. Spela igen eller gå tillbaka till menyn.
+7. I menyn kan leaderboard ses.
 
 ## Licens
 
@@ -62,6 +65,7 @@ Projektet är licensierat under MIT-licens.
     -  tryck i BackFace Culling (så här ser modellen ut i unity).
     -  Om visa faces saknas: Lägg till en solidify modifier till de delar som saknar faces (eventuellt hela modellen).
   - Kan ibland fixas genom att gå in i "edit-mode" i blender och klicka Ctrl shift N. Ta sedan bort så inside inte är ifyllt under "recalculate normals", spara.
+
 
 ## Credits
 
