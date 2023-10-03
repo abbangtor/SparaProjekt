@@ -13,7 +13,6 @@ Spelet är riktat mot lågstadieelever. Målet med spelet är att lära sig om v
 - [Licens](#licens)
 - [Lista över kända fel](#lista-över-kända-fel)
 - [Credits](#credits)
-- [Changelogs](#changelogs)
 
 ## Kom Igång
 
