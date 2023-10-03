@@ -14,15 +14,24 @@ public class PullInteraction : XRBaseInteractable
     private LineRenderer _lineRenderer;
     private IXRSelectInteractor _pullingInteractor = null;
 
+    private AudioSource _audioSource;
+
     protected override void Awake()
     {
         base.Awake();
         _lineRenderer = GetComponent<LineRenderer>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void SetPullInteraction(SelectEnterEventArgs args)
     {
         _pullingInteractor = args.interactorObject;
+    }
+
+    private void PlayReleaseSound()
+    {
+        _audioSource.Stop();
+        _audioSource.Play();
     }
 
     public void Release()
@@ -32,6 +41,8 @@ public class PullInteraction : XRBaseInteractable
         pullAmount = 0.0f;
         notch.transform.localPosition = new Vector3(notch.transform.localPosition.x, notch.transform.localPosition.y, 0f);
         UpdateString();
+
+        PlayReleaseSound();
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)

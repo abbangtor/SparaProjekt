@@ -1,6 +1,8 @@
 # vr-edutainment-with-bow-and-arrow-basgrupp-1
 
-*Skräp i stora lass* är ett pil och båge spel i VR där man källsorterar olika typer av skräp: plast, metall, papper, kompost och pant. Med hjälp av bågen så spetsar du skräpet med pilen och skjuter den i rätt soptunna. Pant ger dubbla poäng och skuter du skräpet i fel soptunna får du minuspoäng.
+*Skräp i stora lass* är ett pil och båge spel i VR där man källsorterar olika typer av skräp: plast, metall, papper, kompost och pant. Med hjälp av bågen så spetsar du skräpet med pilen och skjuter den i rätt soptunna. Pant ger dubbla poäng och skuter du skräpet i fel soptunna får du minuspoäng. 
+
+Spelet är riktat mot lågstadieelever. Målet med spelet är att lära sig om vikten av källsortering och återvinning på ett roligt och interaktivt sätt.
 
 ## Innehållförteckning
 
@@ -9,9 +11,8 @@
   - [Installation](#installation)
 - [Användning](#användning)
 - [Licens](#licens)
-- [Lista över kända buggar](#lista-över-kända-buggar)
+- [Lista över kända fel](#lista-över-kända-fel)
 - [Credits](#credits)
-- [Changelogs](#changelogs)
 
 ## Kom Igång
 
@@ -35,17 +36,35 @@ git clone https://github.com/abbindustrigymnasium/vr-edutainment-with-bow-and-ar
 
 ## Användning
 
+Vi har använt ett Oculus quest 2 när vi har kört spelet under utvecklingen av spelet. Vi har kört spelet genom att sideloada det och headsetet måste därför vara i developer mode
+
 ### Köra projektet
 
-Explain how to use your Unity project. Include any necessary information about controls, settings, or other important aspects of the user experience.
+1. I Unity, i Build Setting:
+    -  Byt byggplatformen till android.
+    -  Byt Texture compression till ASTC
+    -  Checka i Development build.
+2. Koppla headsetet till datorn och klicka allow i headsetet. Det kan komma upp en notis som man måste klicka på för att godkänna allt.
+3. I Build Settings, tryck på build och spara builden på ett bra ställe.
+4. I File Explorer, lägg in build-filen i mappen Quest 2 > Internal Shared Storage > Download
+5. I Build Settings, välj ditt headset under Run Device. Om du inte hittar det klicka på refresh.
+6. Klicka på Patch and run
 
 ### Spela spelet
 
+1. Klicka "Spela" i menyn. Då försvinner menyn och timern startar.
+2. Plocka upp pilbågen. En pil kommer att autogenereras på pilbågen när strängen dras i.
+3. Spetsa en bit skräp med pilen så att den fastnar.
+4. Sikta och skjut skräpet i rätt soptunna. Att skjuta i rätt soptunna ger ett poäng, pant ger två. Men att skjuta i fel soptunna ger minuspoäng.
+5. Sortera så mycket skräp som möjligt innan tiden tar slut.
+6. Spela igen eller gå tillbaka till menyn.
+7. I menyn kan leaderboard ses.
+
 ## Licens
 
-This project is licensed under the MIT licens - see the [LICENSE.md](LICENSE.md) file for details.
+Projektet är licensierat under MIT-licens. 
 
-## Lista över kända buggar
+## Lista över kända fel
 
 - Vissa "faces" syns inte från vissa vinklar i Unity, efter att ha importerat en blender fil:
   - Problemet kan vara "backface culling".
@@ -54,6 +73,9 @@ This project is licensed under the MIT licens - see the [LICENSE.md](LICENSE.md)
     -  tryck i BackFace Culling (så här ser modellen ut i unity).
     -  Om visa faces saknas: Lägg till en solidify modifier till de delar som saknar faces (eventuellt hela modellen).
   - Kan ibland fixas genom att gå in i "edit-mode" i blender och klicka Ctrl shift N. Ta sedan bort så inside inte är ifyllt under "recalculate normals", spara.
+  
+- När man bygger projektet för första gången kan Unity klaga på att "Color space" är fel eller inte fungerar som det ska
+  - För att lösa detta problem behöver en inställning i player settings ändras. Gå först in i player settings, color space, byt till det andra alternativet (Linear/Gamma). Vi använder Linear, men ibland kan man behöva byta till Gamma och sedan tillbaka till linear.
 
 ## Credits
 
@@ -66,15 +88,5 @@ This project is licensed under the MIT licens - see the [LICENSE.md](LICENSE.md)
 - Ängla Törnros
 
 #### Resurser:
-- Fist full of shrimp
+- Fist full of shrimp VR Tutorial för pilbåge
 
-## Changelogs
-
-# vr-edutainment-with-bow-and-arrow-basgrupp-1
-vr-edutainment-with-bow-and-arrow-basgrupp-1 created by GitHub Classroom
-
-### tips för en annan gång
-Om "faces" inte syns från vissa vinklar i unity, efter att ha importat en blender fil, så kan problemet vara "backface culling".
-
-För att kolla/ fixa detta, tryck ned shading fliken, tryck i BackFace Culling (så här ser modellen ut i unity). Om visa faces saknas: Lägg till en solidify modifier till de delar som saknar faces (eventuellt hela modellen).
-Kan ibland fixas genom att gå in i "edit-mode" i blender och klicka Ctrl shift N. Ta sedan bort så inside inte är ifyllt under "recalculate normals", spara.
