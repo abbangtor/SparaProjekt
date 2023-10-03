@@ -35,12 +35,19 @@ git clone https://github.com/abbindustrigymnasium/vr-edutainment-with-bow-and-ar
 
 ## Användning
 
-### Köra projektet
-
 Vi har använt ett Oculus quest 2 när vi har kört spelet under utvecklingen av spelet. Vi har kört spelet genom att sideloada det och headsetet måste därför vara i developer mode
 
-1. Byt byggplatformen till android.
-2. 
+### Köra projektet
+
+1. I Unity, i Build Setting:
+    -  Byt byggplatformen till android.
+    -  Byt Texture compression till ASTC
+    -  Checka i Development build.
+2. Koppla headsetet till datorn och klicka allow i headsetet. Det kan komma upp en notis som man måste klicka på för att godkänna allt.
+3. I Build Settings, tryck på build och spara builden på ett bra ställe.
+4. I File Explorer, lägg in build-filen i mappen Quest 2 > Internal Shared Storage > Download
+5. I Build Settings, välj ditt headset under Run Device. Om du inte hittar det klicka på refresh.
+6. Klicka på Patch and run
 
 ### Spela spelet
 
