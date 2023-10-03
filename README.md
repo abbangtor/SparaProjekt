@@ -11,7 +11,7 @@ Spelet är riktat mot lågstadieelever. Målet med spelet är att lära sig om v
   - [Installation](#installation)
 - [Användning](#användning)
 - [Licens](#licens)
-- [Lista över kända fel](#lista-över-kända-buggar)
+- [Lista över kända fel](#lista-över-kända-fel)
 - [Credits](#credits)
 - [Changelogs](#changelogs)
 
